@@ -1,26 +1,12 @@
 # QueueLess — Smart Virtual Queue & Crowd Management System
 
-> **Don't wait in line. Own your time.**
-
 QueueLess is a full-stack microservices application that eliminates physical waiting queues. Customers join queues digitally, receive a token, track their position in real time, and arrive only when it's their turn.
-
----
-
-## Screenshots
-
-> _Add screenshots here after running the project locally._
-
-| Landing Page | Business Discovery | My Token | Staff Dashboard |
-|---|---|---|---|
-| ![landing]() | ![discovery]() | ![token]() | ![staff]() |
 
 ---
 
 ## Problem Statement
 
 Physical waiting queues at clinics, salons, government offices, and service centers waste hours of people's time every day. There is no visibility into wait times and no way to step out and return at the right moment.
-
-**QueueLess** solves this by giving every customer a digital token with a live position tracker and estimated wait time — accessible from any device.
 
 ---
 
