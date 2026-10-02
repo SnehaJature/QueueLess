@@ -1,0 +1,170 @@
+/* ============================================================
+   QueueLess — Global Styles
+   Design: clean, editorial, functional. No gradients, no gimmicks.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --brand:       #1a1a2e;
+  --accent:      #e63946;
+  --accent-soft: #fde8ea;
+  --text-primary:   #111827;
+  --text-secondary: #6b7280;
+  --text-muted:     #9ca3af;
+  --border:      #e5e7eb;
+  --border-dark: #d1d5db;
+  --bg:          #f9fafb;
+  --bg-white:    #ffffff;
+  --bg-subtle:   #f3f4f6;
+  --success:     #16a34a;
+  --success-bg:  #dcfce7;
+  --warning:     #d97706;
+  --warning-bg:  #fef3c7;
+  --danger:      #dc2626;
+  --danger-bg:   #fee2e2;
+  --radius-sm:   4px;
+  --radius:      6px;
+  --radius-lg:   10px;
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
+  --shadow:      0 2px 8px rgba(0,0,0,0.10);
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--font); }
+input, select, textarea { font-family: var(--font); }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+  white-space: nowrap;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primary   { background: var(--brand); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: #16213e; }
+
+.btn-danger    { background: var(--danger); color: #fff; }
+.btn-danger:hover:not(:disabled) { background: #b91c1c; }
+
+.btn-success   { background: var(--success); color: #fff; }
+.btn-success:hover:not(:disabled) { background: #15803d; }
+
+.btn-outline   { background: transparent; border-color: var(--border-dark); color: var(--text-primary); }
+.btn-outline:hover:not(:disabled) { background: var(--bg-subtle); }
+
+.btn-ghost     { background: transparent; border-color: transparent; color: var(--text-secondary); }
+.btn-ghost:hover:not(:disabled) { background: var(--bg-subtle); }
+
+.btn-sm { padding: 6px 12px; font-size: 0.8125rem; }
+.btn-lg { padding: 12px 24px; font-size: 1rem; }
+
+/* ---- Form ---- */
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.form-label { font-size: 0.875rem; font-weight: 500; color: var(--text-primary); }
+.form-input {
+  padding: 9px 12px;
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  transition: border-color 0.15s;
+  width: 100%;
+}
+.form-input:focus { outline: none; border-color: var(--brand); }
+.form-input.error { border-color: var(--danger); }
+.form-error { font-size: 0.8125rem; color: var(--danger); }
+.form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+
+/* ---- Card ---- */
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+.card-sm { padding: 14px 16px; }
+
+/* ---- Badge / Status ---- */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.badge-open    { background: var(--success-bg); color: var(--success); }
+.badge-closed  { background: var(--bg-subtle);  color: var(--text-muted); }
+.badge-paused  { background: var(--warning-bg); color: var(--warning); }
+.badge-waiting { background: var(--warning-bg); color: var(--warning); }
+.badge-called  { background: #dbeafe; color: #1d4ed8; }
+.badge-serving { background: #dbeafe; color: #1d4ed8; }
+.badge-completed { background: var(--success-bg); color: var(--success); }
+.badge-skipped   { background: var(--bg-subtle);  color: var(--text-muted); }
+.badge-cancelled { background: var(--danger-bg);  color: var(--danger); }
+
+/* ---- Layout ---- */
+.page-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.page-header { padding: 28px 0 20px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
+.page-title { font-size: 1.375rem; font-weight: 700; color: var(--text-primary); }
+.page-subtitle { font-size: 0.9375rem; color: var(--text-secondary); margin-top: 4px; }
+
+/* ---- Table ---- */
+.table-wrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { text-align: left; padding: 10px 14px; font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text-primary); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg-subtle); }
+
+/* ---- Alert ---- */
+.alert { padding: 12px 16px; border-radius: var(--radius); font-size: 0.9rem; margin-bottom: 16px; }
+.alert-error   { background: var(--danger-bg);  color: var(--danger);  border: 1px solid #fca5a5; }
+.alert-success { background: var(--success-bg); color: var(--success); border: 1px solid #86efac; }
+.alert-info    { background: #dbeafe; color: #1d4ed8; border: 1px solid #93c5fd; }
+
+/* ---- Divider ---- */
+.divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+/* ---- Spinner ---- */
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--brand);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loading-center { display: flex; justify-content: center; align-items: center; padding: 60px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .page-container { padding: 0 16px; }
+  .hide-mobile { display: none !important; }
+  table { font-size: 0.85rem; }
+  th, td { padding: 10px 10px; }
+}

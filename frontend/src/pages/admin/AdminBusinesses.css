@@ -1,0 +1,83 @@
+.admin-form { display: flex; flex-direction: column; gap: 0; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.section-mini-heading {
+  font-size: 0.8125rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 16px;
+}
+
+/* Queue expand button */
+.btn-queue {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+}
+.btn-queue:hover { background: #dbeafe; }
+
+/* Expanded queue panel */
+.queue-expand-panel {
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--border);
+}
+.queue-expand-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.queue-expand-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Create queue inline form */
+.queue-create-form {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.queue-loading { color: var(--text-muted); font-size: 0.875rem; padding: 12px 0; }
+
+.queue-empty {
+  padding: 16px;
+  background: var(--bg-white);
+  border: 1px dashed var(--border-dark);
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Inner queue table */
+.queue-inner-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.queue-inner-table th {
+  background: var(--bg-subtle);
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.queue-inner-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.queue-inner-table tr:last-child td { border-bottom: none; }
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+}

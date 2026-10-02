@@ -1,0 +1,55 @@
+.token-page { max-width: 480px; margin: 0 auto; }
+
+.token-business-header { text-align: center; margin-bottom: 24px; }
+.token-business-name {
+  font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--text-muted);
+}
+.token-queue-name { font-size: 1.0625rem; font-weight: 700; color: var(--text-primary); margin-top: 4px; }
+
+.token-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  text-align: center;
+}
+.token-card-called {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.token-main { margin-bottom: 24px; }
+.token-label {
+  font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px;
+}
+.token-number {
+  font-size: 5rem; font-weight: 900; color: var(--brand);
+  letter-spacing: -0.04em; line-height: 1;
+}
+
+.token-divider { border-top: 1px solid var(--border); margin: 20px 0; }
+
+.token-serving-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+.token-serving-item { background: var(--bg-subtle); border-radius: var(--radius); padding: 12px 8px; }
+.token-serving-label {
+  font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted); display: block; margin-bottom: 4px;
+}
+.token-serving-number { font-size: 1.25rem; font-weight: 800; color: var(--text-primary); }
+
+.token-status-row { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.token-status-hint { font-size: 0.875rem; color: var(--text-secondary); }
+
+.token-meta-row {
+  display: flex; justify-content: center; gap: 32px;
+  margin-top: 20px; flex-wrap: wrap;
+}
+.token-meta-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.token-meta-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.token-meta-value { font-size: 0.9375rem; font-weight: 700; color: var(--text-primary); }
+
+.no-token-state { text-align: center; padding: 80px 20px; }
+.no-token-title { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.no-token-sub { color: var(--text-secondary); }

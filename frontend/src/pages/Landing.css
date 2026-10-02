@@ -1,0 +1,56 @@
+.landing { background: var(--bg-white); }
+
+/* Hero */
+.hero { border-bottom: 1px solid var(--border); padding: 72px 20px 64px; }
+.hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: center; }
+.hero-eyebrow { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 16px; }
+.hero-heading { font-size: 3.25rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--brand); margin-bottom: 20px; }
+.hero-sub { font-size: 1.0625rem; color: var(--text-secondary); line-height: 1.7; max-width: 440px; margin-bottom: 32px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Queue Widget */
+.queue-widget { background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow); }
+.widget-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.widget-business { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); }
+.widget-service { font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin-top: 2px; }
+.widget-serving { display: flex; flex-direction: column; align-items: center; padding: 16px 0; }
+.widget-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 4px; }
+.widget-token-big { font-size: 3rem; font-weight: 800; color: var(--brand); letter-spacing: -0.04em; line-height: 1; }
+.widget-divider { border-top: 1px solid var(--border); margin: 12px 0; }
+.widget-your { display: flex; flex-direction: column; align-items: center; padding: 8px 0; }
+.widget-token-yours { font-size: 2rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
+.widget-meta { display: flex; justify-content: space-between; font-size: 0.8125rem; color: var(--text-secondary); margin: 12px 0; }
+.widget-queue-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.widget-chip { background: var(--bg-subtle); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); }
+.widget-chip-you { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+/* How it works */
+.how-it-works { padding: 72px 0; background: var(--bg); border-bottom: 1px solid var(--border); }
+.section-label { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 32px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.step-number { font-size: 0.75rem; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; display: block; margin-bottom: 10px; }
+.step-title { font-size: 1.0625rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.step-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* Built for */
+.built-for { padding: 56px 0; border-bottom: 1px solid var(--border); }
+.category-list { display: flex; gap: 10px; flex-wrap: wrap; }
+.category-tag { padding: 8px 16px; border: 1px solid var(--border-dark); border-radius: 100px; font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); background: var(--bg-white); }
+
+/* CTA */
+.cta-section { padding: 72px 0; }
+.cta-box { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 48px; text-align: center; background: var(--bg-subtle); }
+.cta-box h2 { font-size: 1.75rem; font-weight: 800; color: var(--brand); margin-bottom: 10px; letter-spacing: -0.02em; }
+.cta-box p { color: var(--text-secondary); margin-bottom: 24px; }
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .queue-widget { max-width: 380px; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .hero-heading { font-size: 2.5rem; }
+}
+@media (max-width: 600px) {
+  .steps { grid-template-columns: 1fr; }
+  .hero-heading { font-size: 2rem; }
+  .hero { padding: 48px 20px; }
+}
