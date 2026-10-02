@@ -1,0 +1,61 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/users/register, /api/users/login
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/$\{segment}
+
+        - id: user-service-secured
+          uri: lb://user-service
+          predicates:
+            - Path=/api/users/**
+          filters:
+            - JwtAuthFilter
+            - RewritePath=/api/(?<segment>.*), /api/$\{segment}
+
+        - id: business-service
+          uri: lb://business-service
+          predicates:
+            - Path=/api/businesses/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/$\{segment}
+
+        - id: queue-service
+          uri: lb://queue-service
+          predicates:
+            - Path=/api/queues/**
+          filters:
+            - JwtAuthFilter
+            - RewritePath=/api/(?<segment>.*), /api/$\{segment}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+jwt:
+  secret: queueless-super-secret-key-must-be-at-least-256-bits-long-for-hs256
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
